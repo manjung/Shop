@@ -22,12 +22,18 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.astuetz.PagerSlidingTabStrip;
+
+import static android.support.design.widget.NavigationView.*;
+
 public class MainActivity extends AppCompatActivity
-        implements  NavigationView.OnNavigationItemSelectedListener,
+        implements  OnNavigationItemSelectedListener,
                     ItemFragment.OnListFragmentInteractionListener,
                     PlusOneFragment.OnFragmentInteractionListener,
                     BlankFragment.OnFragmentInteractionListener
 {
+    private PagerSlidingTabStrip tabs;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
