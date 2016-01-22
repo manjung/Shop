@@ -1,8 +1,15 @@
 package com.example.ainalia.shop;
 
+import android.annotation.TargetApi;
+import android.graphics.Typeface;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentTabHost;
+import android.support.v4.content.ContextCompat;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,9 +19,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements  NavigationView.OnNavigationItemSelectedListener,
+                    ItemFragment.OnListFragmentInteractionListener,
+                    PlusOneFragment.OnFragmentInteractionListener,
+                    BlankFragment.OnFragmentInteractionListener
+{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +53,37 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        View header = LayoutInflater.from(this).inflate(R.layout.nav_header_main, null);
+        navigationView.addHeaderView(header);
+        navigationView.removeHeaderView(navigationView.getHeaderView(0));
+
+        TextView NametextView = (TextView) header.findViewById(R.id.textViewName);
+        TextView EmailtextView = (TextView) header.findViewById(R.id.textViewEmail);
+         Typeface font = Typeface.createFromAsset(getAssets(), "kaushanscriptregular.ttf");
+
+
+
+        if(EmailtextView!=null && NametextView!=null && font!=null) {
+            NametextView.setTypeface(font);
+            EmailtextView.setTypeface(font);
+        }
+
+        FragmentTabHost mTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
+        mTabHost.setup(this, getSupportFragmentManager(), R.id.container);
+        mTabHost.addTab(mTabHost.newTabSpec("one")
+                .setIndicator("最新消息", ContextCompat.getDrawable(this, R.drawable.side_nav_bar))
+                , ItemFragment.class, null);
+        mTabHost.addTab(mTabHost.newTabSpec("two")
+                .setIndicator("商品查詢", ContextCompat.getDrawable(this,R.drawable.side_nav_bar))
+                , PlusOneFragment.class, null);
+        mTabHost.addTab(mTabHost.newTabSpec("three")
+                .setIndicator("客戶服務", ContextCompat.getDrawable(this,R.drawable.side_nav_bar))
+                , BlankFragment.class, null);
+
     }
+
+
 
     @Override
     public void onBackPressed() {
@@ -97,5 +140,16 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onListFragmentInteraction(DummyContent.DummyItem item)
+    {
+
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }
