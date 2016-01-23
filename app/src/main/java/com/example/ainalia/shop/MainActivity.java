@@ -9,6 +9,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -27,13 +28,10 @@ import com.astuetz.PagerSlidingTabStrip;
 import static android.support.design.widget.NavigationView.*;
 
 public class MainActivity extends AppCompatActivity
-        implements  OnNavigationItemSelectedListener,
-                    ItemFragment.OnListFragmentInteractionListener,
-                    PlusOneFragment.OnFragmentInteractionListener,
-                    BlankFragment.OnFragmentInteractionListener
-{
-    private PagerSlidingTabStrip tabs;
-
+        implements  OnNavigationItemSelectedListener
+                    ,ItemFragment.OnListFragmentInteractionListener
+                    ,PlusOneFragment.OnFragmentInteractionListener
+                    ,BlankFragment.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,17 +73,13 @@ public class MainActivity extends AppCompatActivity
             EmailtextView.setTypeface(font);
         }
 
-        FragmentTabHost mTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
-        mTabHost.setup(this, getSupportFragmentManager(), R.id.container);
-        mTabHost.addTab(mTabHost.newTabSpec("one")
-                .setIndicator("最新消息", ContextCompat.getDrawable(this, R.drawable.side_nav_bar))
-                , ItemFragment.class, null);
-        mTabHost.addTab(mTabHost.newTabSpec("two")
-                .setIndicator("商品查詢", ContextCompat.getDrawable(this,R.drawable.side_nav_bar))
-                , PlusOneFragment.class, null);
-        mTabHost.addTab(mTabHost.newTabSpec("three")
-                .setIndicator("客戶服務", ContextCompat.getDrawable(this,R.drawable.side_nav_bar))
-                , BlankFragment.class, null);
+        // Initialize the ViewPager and set an adapter
+        ViewPager pager = (ViewPager) findViewById(R.id.pager);
+        pager.setAdapter(new pageAdapter(getSupportFragmentManager()));
+
+        // Bind the tabs to the ViewPager
+        PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
+        tabs.setViewPager(pager);
 
     }
 
@@ -154,7 +148,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    @Override
+   @Override
     public void onFragmentInteraction(Uri uri) {
 
     }
