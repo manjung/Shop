@@ -5,17 +5,24 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <com.astuetz.PagerSlidingTabStrip
-        android:id="@+id/tabs"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        viewpager:pstsShouldExpand="true"
-        viewpager:pstsIndicatorColor="@color/primary_dark"
-        viewpager:pstsDividerColor="@color/primary_dark"
-        viewpager:pstsTabPaddingLeftRight="35dip"
-        viewpager:pstsUnderlineColor="#00000000">
 
-     </com.astuetz.PagerSlidingTabStrip>
+
+     <android.support.design.widget.TabLayout
+         android:id="@+id/tabs"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         viewpager:tabSelectedTextColor="@color/primary_dark"
+         viewpager:tabTextColor="@color/divider"
+         viewpager:tabIndicatorColor="@color/primary_dark"
+         viewpager:tabIndicatorHeight="5dp"
+         viewpager:tabContentStart="0dp"
+         viewpager:tabMode="scrollable"
+         viewpager:tabGravity="center"
+         viewpager:tabMaxWidth="100dp"
+         viewpager:tabMinWidth="50dp"
+        />
+
+
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"

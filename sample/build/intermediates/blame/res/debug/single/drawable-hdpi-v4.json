@@ -1,5 +1,13 @@
 [
     {
+        "merged": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_launcher_actionbar.png",
+        "source": "D:\\program\\androidWorkspace\\Shop\\sample\\res\\drawable-hdpi\\ic_launcher_actionbar.png"
+    },
+    {
+        "merged": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_launcher.png",
+        "source": "D:\\program\\androidWorkspace\\Shop\\sample\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
         "merged": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_launcher.png",
         "source": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\res\\drawable-hdpi\\ic_launcher.png"
     },

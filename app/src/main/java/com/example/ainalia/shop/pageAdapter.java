@@ -16,7 +16,6 @@ public class pageAdapter extends FragmentPagerAdapter {
     private BlankFragment   blank;
     private ItemFragment  item;
     private final String[] TITLES = {"最新消息", "商品查詢","客戶服務","聯絡我們","聯絡我們"};
-
     public pageAdapter(FragmentManager fm) {
         super(fm);
 
