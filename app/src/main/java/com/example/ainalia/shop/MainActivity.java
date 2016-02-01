@@ -21,7 +21,7 @@ import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import com.astuetz.PagerSlidingTabStrip;
+
 
 import static android.support.design.widget.NavigationView.*;
 

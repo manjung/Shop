@@ -5,13 +5,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-
-
      <android.support.design.widget.TabLayout
          android:id="@+id/tabs"
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
-         viewpager:tabSelectedTextColor="@color/primary_dark"
+         viewpager:tabSelectedTextColor="@color/primary_text"
          viewpager:tabTextColor="@color/divider"
          viewpager:tabIndicatorColor="@color/primary_dark"
          viewpager:tabIndicatorHeight="5dp"
@@ -21,8 +19,6 @@
          viewpager:tabMaxWidth="100dp"
          viewpager:tabMinWidth="50dp"
         />
-
-
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"
