@@ -1,26 +1,14 @@
 [
     {
-        "merged": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable\\background_tab.xml",
-        "source": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\build\\intermediates\\exploded-aar\\Shop\\library\\unspecified\\res\\drawable\\background_tab.xml"
-    },
-    {
         "merged": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable\\background_tabs.xml",
         "source": "D:\\program\\androidWorkspace\\Shop\\sample\\res\\drawable\\background_tabs.xml"
     },
     {
-        "merged": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable\\background_tabs_diagonal.xml",
-        "source": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\res\\drawable\\background_tabs_diagonal.xml"
-    },
-    {
-        "merged": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable\\background_tabs.xml",
-        "source": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\res\\drawable\\background_tabs.xml"
+        "merged": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable\\background_tab.xml",
+        "source": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\exploded-aar\\Shop\\library\\unspecified\\res\\drawable\\background_tab.xml"
     },
     {
         "merged": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable\\background_tabs_diagonal.xml",
         "source": "D:\\program\\androidWorkspace\\Shop\\sample\\res\\drawable\\background_tabs_diagonal.xml"
-    },
-    {
-        "merged": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable\\background_tab.xml",
-        "source": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\exploded-aar\\Shop\\library\\unspecified\\res\\drawable\\background_tab.xml"
     }
 ]

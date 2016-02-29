@@ -21,6 +21,7 @@ public class PhotoAdapter extends BaseAdapter
     private ImageLoader imageLoader ;
     private Context mContext;
 
+
     public PhotoAdapter (Context context, List<String> objects, ImageLoader imageLoader)
     {
         this.mContext=context;

@@ -8,6 +8,8 @@ public class ImagesSourceUrl {
         private int startcount;
         private int finalount;
         private String[] imageThumbUrls;
+        private String URL = "http://wfm.yctec.com.tw/Prod/A0000100";
+        private String FileExtension =".jpg";
 
         public ImagesSourceUrl(int start ,int fianl)
         {
@@ -26,7 +28,7 @@ public class ImagesSourceUrl {
             imageThumbUrls = new String[getCount()];
             for(int i= startcount; i<= finalount; i++)
             {
-                imageThumbUrls[i-1]=new String("http://wfm.yctec.com.tw/Prod/A0000100"+createName(i)+".jpg");
+                imageThumbUrls[i-1]=URL+createName(i)+FileExtension;
             }
 
         }

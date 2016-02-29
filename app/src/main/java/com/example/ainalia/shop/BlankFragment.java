@@ -80,7 +80,7 @@ public class BlankFragment extends Fragment {
         photoGallery = (GridView) v.findViewById(R.id.gridPhoto);
         adapter= new PhotoAdapter(getActivity(), Arrays.asList(image.getImageThumbUrls()), imageLoader);
         photoGallery.setAdapter(adapter);
-        return v;
+             return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -115,6 +115,8 @@ public class BlankFragment extends Fragment {
     public void onDestroy()
     {
         super.onDestroy();
+        imageLoader.getInstance().clearDiskCache();
+        imageLoader.getInstance().clearMemoryCache();
     }
 
 }

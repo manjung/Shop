@@ -31,9 +31,9 @@ public class pageAdapter extends FragmentPagerAdapter {
             case 2:
                 return new ItemFragment();
             case 3:
-                return new ItemFragment();
+                return new webFragment();
             case 4:
-                return new ItemFragment();
+                return new SoapFragment();
         }
 
         return null;

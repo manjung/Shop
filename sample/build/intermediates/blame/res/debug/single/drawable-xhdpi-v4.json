@@ -1,67 +1,11 @@
 [
     {
-        "merged": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\background_card.9.png",
-        "source": "D:\\program\\androidWorkspace\\Shop\\sample\\res\\drawable-xhdpi\\background_card.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_launcher_gmail.png",
-        "source": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\res\\drawable-xhdpi\\ic_launcher_gmail.png"
-    },
-    {
-        "merged": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_launcher_gplus.png",
-        "source": "D:\\program\\androidWorkspace\\Shop\\sample\\res\\drawable-xhdpi\\ic_launcher_gplus.png"
-    },
-    {
-        "merged": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\tabs_pattern.png",
-        "source": "D:\\program\\androidWorkspace\\Shop\\sample\\res\\drawable-xhdpi\\tabs_pattern.png"
-    },
-    {
-        "merged": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_launcher.png",
-        "source": "D:\\program\\androidWorkspace\\Shop\\sample\\res\\drawable-xhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_launcher_gmaps.png",
-        "source": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\res\\drawable-xhdpi\\ic_launcher_gmaps.png"
-    },
-    {
-        "merged": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_launcher_gmaps.png",
-        "source": "D:\\program\\androidWorkspace\\Shop\\sample\\res\\drawable-xhdpi\\ic_launcher_gmaps.png"
-    },
-    {
-        "merged": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_launcher_chrome.png",
-        "source": "D:\\program\\androidWorkspace\\Shop\\sample\\res\\drawable-xhdpi\\ic_launcher_chrome.png"
-    },
-    {
-        "merged": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\tabs_pattern_diagonal.png",
-        "source": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\res\\drawable-xhdpi\\tabs_pattern_diagonal.png"
-    },
-    {
-        "merged": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_launcher_actionbar.png",
-        "source": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\res\\drawable-xhdpi\\ic_launcher_actionbar.png"
-    },
-    {
-        "merged": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_launcher.png",
-        "source": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\res\\drawable-xhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_action_user.png",
-        "source": "D:\\program\\androidWorkspace\\Shop\\sample\\res\\drawable-xhdpi\\ic_action_user.png"
-    },
-    {
         "merged": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\actionbar_bottom.9.png",
         "source": "D:\\program\\androidWorkspace\\Shop\\sample\\res\\drawable-xhdpi\\actionbar_bottom.9.png"
     },
     {
-        "merged": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\tabs_pattern.png",
-        "source": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\res\\drawable-xhdpi\\tabs_pattern.png"
-    },
-    {
-        "merged": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_launcher_chrome.png",
-        "source": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\res\\drawable-xhdpi\\ic_launcher_chrome.png"
-    },
-    {
-        "merged": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\actionbar_bottom.9.png",
-        "source": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\res\\drawable-xhdpi\\actionbar_bottom.9.png"
+        "merged": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\background_card.9.png",
+        "source": "D:\\program\\androidWorkspace\\Shop\\sample\\res\\drawable-xhdpi\\background_card.9.png"
     },
     {
         "merged": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\contact.png",
@@ -72,27 +16,35 @@
         "source": "D:\\program\\androidWorkspace\\Shop\\sample\\res\\drawable-xhdpi\\tabs_pattern_diagonal.png"
     },
     {
-        "merged": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\background_card.9.png",
-        "source": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\res\\drawable-xhdpi\\background_card.9.png"
+        "merged": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_launcher_gplus.png",
+        "source": "D:\\program\\androidWorkspace\\Shop\\sample\\res\\drawable-xhdpi\\ic_launcher_gplus.png"
     },
     {
         "merged": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_launcher_actionbar.png",
         "source": "D:\\program\\androidWorkspace\\Shop\\sample\\res\\drawable-xhdpi\\ic_launcher_actionbar.png"
     },
     {
-        "merged": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\contact.png",
-        "source": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\res\\drawable-xhdpi\\contact.png"
+        "merged": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\tabs_pattern.png",
+        "source": "D:\\program\\androidWorkspace\\Shop\\sample\\res\\drawable-xhdpi\\tabs_pattern.png"
+    },
+    {
+        "merged": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_launcher.png",
+        "source": "D:\\program\\androidWorkspace\\Shop\\sample\\res\\drawable-xhdpi\\ic_launcher.png"
     },
     {
         "merged": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_launcher_gmail.png",
         "source": "D:\\program\\androidWorkspace\\Shop\\sample\\res\\drawable-xhdpi\\ic_launcher_gmail.png"
     },
     {
-        "merged": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_action_user.png",
-        "source": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\res\\drawable-xhdpi\\ic_action_user.png"
+        "merged": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_launcher_gmaps.png",
+        "source": "D:\\program\\androidWorkspace\\Shop\\sample\\res\\drawable-xhdpi\\ic_launcher_gmaps.png"
     },
     {
-        "merged": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_launcher_gplus.png",
-        "source": "C:\\Users\\Ainalia\\AndroidStudioProjects\\Shop\\sample\\res\\drawable-xhdpi\\ic_launcher_gplus.png"
+        "merged": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_launcher_chrome.png",
+        "source": "D:\\program\\androidWorkspace\\Shop\\sample\\res\\drawable-xhdpi\\ic_launcher_chrome.png"
+    },
+    {
+        "merged": "D:\\program\\androidWorkspace\\Shop\\sample\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_action_user.png",
+        "source": "D:\\program\\androidWorkspace\\Shop\\sample\\res\\drawable-xhdpi\\ic_action_user.png"
     }
 ]
