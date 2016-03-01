@@ -14,9 +14,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
-
+import static com.example.ainalia.shop.IntentServiceImpl.*;
 
 
 public class SoapFragment extends Fragment {
@@ -28,7 +29,8 @@ public class SoapFragment extends Fragment {
     private IntentFilter filter;
     private Context context;
     private Button button;
-    public TextView text;
+    private TextView text;
+    private ProgressBar progressBar;
 
 
     public static SoapFragment newInstance() {
@@ -57,17 +59,20 @@ public class SoapFragment extends Fragment {
 
         text = (TextView) v.findViewById(R.id.textViewSaop);
         button  = (Button) v.findViewById(R.id.button);
+        progressBar=(ProgressBar)v.findViewById(R.id.progressBar);
         context = getContext();
         receiver = new MyReceiver();
         filter = new IntentFilter();
         filter.addAction(MyReceiver.MY_BROADCAST_TAG);
+        filter.addAction(MyReceiver.MY_INTENTERROR_TAG);
+        filter.addAction(MyReceiver.MY_PROGRESSBAR_TAG);
 
         button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v)
-            {
-                    Intent intent = new Intent(getActivity(),IntentServiceImpl.class);
-                     getActivity().startService(intent);
+            public void onClick(View v) {
 
+
+                Intent intent = new Intent(getActivity(), IntentServiceImpl.class);
+                getActivity().startService(intent);
 
             }
         });
@@ -121,14 +126,32 @@ public class SoapFragment extends Fragment {
 
     class MyReceiver extends BroadcastReceiver {
 
-        public static final String MY_BROADCAST_TAG = "com.example.ainalia.shop";
+        public static final String MY_BROADCAST_TAG = "com.example.ainalia.shop.finish";
+        public static final String MY_PROGRESSBAR_TAG = "com.example.ainalia.shop.progressbar";
+        public static final String MY_INTENTERROR_TAG = "com.example.ainalia.shop.intenterror";
         private String OutPutData;
         @Override
         public void onReceive(Context context, Intent intent) {
 
-            String outputdata = intent.getStringExtra(IntentServiceImpl.TEXT_OUTPUT);
-            setOutPutData(outputdata);
-            text.setText(receiver.getOutPutData());
+            if(MY_PROGRESSBAR_TAG.equals(intent.getAction()))
+            {
+                Bundle bundle = intent.getExtras(); ;
+                int time = bundle.getInt(PROGRESSPAR);
+                progressBar.setProgress((time));
+
+            }else if(MY_BROADCAST_TAG.equals(intent.getAction()))
+            {
+                String outputdata = intent.getStringExtra(TEXT_OUTPUT);
+                setOutPutData(outputdata);
+                text.setText(receiver.getOutPutData());
+
+
+            }else if(MY_INTENTERROR_TAG.equals(intent.getAction()))
+            {
+
+
+            }
+
         }
 
         public String getOutPutData()
