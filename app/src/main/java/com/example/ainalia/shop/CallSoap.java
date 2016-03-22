@@ -53,6 +53,7 @@ public class CallSoap {
 
             androidHttpTransport.debug = true;
 
+
             androidHttpTransport.call(SOAP_ACTION_DOWNLAND, envelope);
 
 
@@ -62,6 +63,7 @@ public class CallSoap {
             SoapObject result= (SoapObject)envelope.getResponse();
 
             String results = result.toString();
+
 
             Get_method=results;
 

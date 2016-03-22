@@ -1,12 +1,16 @@
 package com.example.ainalia.shop;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
@@ -47,6 +51,12 @@ public class SoapFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        context = getContext();
+        receiver = new MyReceiver();
+        filter = new IntentFilter();
+        filter.addAction(MyReceiver.MY_BROADCAST_TAG);
+        filter.addAction(MyReceiver.MY_INTENTERROR_TAG);
+        filter.addAction(MyReceiver.MY_PROGRESSBAR_TAG);
 
 
     }
@@ -60,16 +70,9 @@ public class SoapFragment extends Fragment {
         text = (TextView) v.findViewById(R.id.textViewSaop);
         button  = (Button) v.findViewById(R.id.button);
         progressBar=(ProgressBar)v.findViewById(R.id.progressBar);
-        context = getContext();
-        receiver = new MyReceiver();
-        filter = new IntentFilter();
-        filter.addAction(MyReceiver.MY_BROADCAST_TAG);
-        filter.addAction(MyReceiver.MY_INTENTERROR_TAG);
-        filter.addAction(MyReceiver.MY_PROGRESSBAR_TAG);
 
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
 
                 Intent intent = new Intent(getActivity(), IntentServiceImpl.class);
                 getActivity().startService(intent);
@@ -79,6 +82,8 @@ public class SoapFragment extends Fragment {
 
         return v;
     }
+
+
 
 
     public void onButtonPressed(Uri uri) {
@@ -105,6 +110,7 @@ public class SoapFragment extends Fragment {
         mListener = null;
     }
 
+
     @Override
     public void onResume() {
         super.onResume();
@@ -117,6 +123,10 @@ public class SoapFragment extends Fragment {
         LocalBroadcastManager.getInstance(context).unregisterReceiver(receiver);
     }
 
+    public void onDestroy() {
+        super.onDestroy();
+
+    }
 
 
     public interface OnFragmentInteractionListener {
@@ -137,14 +147,17 @@ public class SoapFragment extends Fragment {
             {
                 Bundle bundle = intent.getExtras(); ;
                 int time = bundle.getInt(PROGRESSPAR);
-                progressBar.setProgress((time));
+                String outputdata = bundle.getString(TEXT_OUTPUT);
+                setOutPutData(outputdata);
+                text.setText(receiver.getOutPutData());
+                progressBar.setProgress(time);
 
             }else if(MY_BROADCAST_TAG.equals(intent.getAction()))
             {
                 String outputdata = intent.getStringExtra(TEXT_OUTPUT);
                 setOutPutData(outputdata);
                 text.setText(receiver.getOutPutData());
-
+                progressBar.setProgress(0);
 
             }else if(MY_INTENTERROR_TAG.equals(intent.getAction()))
             {
