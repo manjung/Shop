@@ -8,7 +8,7 @@ public class custOrder_dl
 {
     private static final String TableName = "custOrder_dl";
 
-    public static final String CREATE = "CREATE TABLE " + TableName
+    public static final String CREATE = "CREATE TABLE IF NOT EXISTS " + TableName
             + " ( "
             + "Y01_UN     INTEGER  NOT NULL "                             //客戶序號
             + " , "
@@ -31,7 +31,7 @@ public class custOrder_dl
             + "TRA           CHAR(1) "                                         //拋磚
             + " , "
             + "PRIMARY KEY ( Y01_UN , Y05_UN , S17_UN ) "
-            + " ) ";
+            + " ) ;";
 
 
 }

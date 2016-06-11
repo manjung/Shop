@@ -9,6 +9,8 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.ainalia.shop.sqlite_table.unit_dl;
+
 import org.litepal.tablemanager.Connector;
 
 import java.io.File;
@@ -18,6 +20,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.channels.FileChannel;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 /**
@@ -29,13 +34,13 @@ import java.nio.channels.FileChannel;
  */
 public class IntentServiceImpl extends IntentService {
 
-    public static final String TEXT_OUTPUT = "OutPut";
-    public static final String PROGRESSPAR = "Time";
+    public static final String   TEXT_OUTPUT = "OutPut"                            ;
+    public static final String   PROGRESSPAR = "Time"                              ;
     private 					 SQLiteDatabase 				db						;
     private 					 DbHelper 						DbHelper				;
     private String dataString;
+    private String[] sourceString;
     boolean isStop=false;
-
 
 
     public IntentServiceImpl() {
@@ -54,27 +59,85 @@ public class IntentServiceImpl extends IntentService {
         final LocalBroadcastManager localBroadcastManager = LocalBroadcastManager.getInstance(this);
 
         Intent broadcastIntent = new Intent();
-        broadcastIntent.setAction(SoapFragment.MyReceiver.MY_PROGRESSBAR_TAG);
+        broadcastIntent.setAction(SoapFragment.MyReceiver.MY_BROADCAST_TAG);
         Bundle bundle = new Bundle();
         bundle.putString(TEXT_OUTPUT, "下載中....");
-        bundle.putInt(PROGRESSPAR, 100);
+        //bundle.putInt(PROGRESSPAR, 50);
         broadcastIntent.putExtras(bundle);
         localBroadcastManager.sendBroadcast(broadcastIntent);
 
         CallSoap call = new CallSoap();
-        dataString = call.CallHellow();
+
+        bundle.putString(TEXT_OUTPUT, "下載完成！");
+        //bundle.putInt(PROGRESSPAR, 50);
+        broadcastIntent.putExtras(bundle);
+        localBroadcastManager.sendBroadcast(broadcastIntent);
+        DbHelper = new DbHelper(this);
+        db = DbHelper.getWritableDatabase();
+
+        sourceString = call.CallHellow();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        bundle.putString(TEXT_OUTPUT, "開始寫入資料庫！");
+        broadcastIntent.putExtras(bundle);
+        localBroadcastManager.sendBroadcast(broadcastIntent);
+
+        Intent prograssIntent = new Intent();
+        prograssIntent.setAction(SoapFragment.MyReceiver.MY_PROGRESSBAR_TAG);
+
+        for( int i=0 ; i < sourceString.length ; i++ )
+        {
+            int bar =(int)(((float)i/sourceString.length)*100);
+
+            bundle.putInt(PROGRESSPAR, bar);
+            prograssIntent.putExtras(bundle);
+            localBroadcastManager.sendBroadcast(prograssIntent);
+
+
+            String[] splite = sourceString[i].split(",");
+            for( int j=0 ; j< splite.length ; j++ )
+            {
+               unit_dl.INSERT(db, splite[0], splite[1], splite[2]);
+            }
+
+        }
+
+
+        dataString=sourceString[0]+"\n";
+
+        for(int i=1; i < sourceString.length ; i++)
+        {
+            dataString = dataString+sourceString[i]+"\n";
+        }
 
         //SQLiteDatabase db = Connector.getDatabase();
 
-        DbHelper = new DbHelper(this);
-        db = DbHelper.getReadableDatabase();
 
+        db.close();
         exportDB();
 
-        Intent dataIntent = new Intent();
-        dataIntent.setAction(SoapFragment.MyReceiver.MY_BROADCAST_TAG);
-        dataIntent.putExtra(TEXT_OUTPUT, dataString);
-        localBroadcastManager.sendBroadcast(dataIntent);
+
+        bundle.putString(TEXT_OUTPUT, dataString);
+        broadcastIntent.putExtras(bundle);
+        localBroadcastManager.sendBroadcast(broadcastIntent);
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        bundle.putString(TEXT_OUTPUT,"寫入資料庫結束！");
+        broadcastIntent.putExtras(bundle);
+        localBroadcastManager.sendBroadcast(broadcastIntent);
+
+
         /*new Thread(){
             public void run(){
 
@@ -132,8 +195,8 @@ public class IntentServiceImpl extends IntentService {
 
         FileChannel source=null;
         FileChannel destination=null;
-        String currentDBPath = "/data/"+ "com.example.ainalia.shop" +"/databases/"+"demo.db";
-        String backupDBPath = "demo.db";
+        String currentDBPath = "/data/"+ "com.example.ainalia.shop" +"/databases/"+DbHelper.DB_NAME;
+        String backupDBPath = DbHelper.DB_NAME;
         File currentDB = new File(data, currentDBPath);
         File backupDB = new File(sd, backupDBPath);
 

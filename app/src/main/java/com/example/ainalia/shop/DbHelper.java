@@ -6,14 +6,28 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+import com.example.ainalia.shop.sqlite_table.*;
+
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 
 /**
  * Created by Ainalia on 2016/3/17.
  */
 public class DbHelper extends SQLiteOpenHelper {
 
-    private static final String DB_NAME = "dataBD.db";
+    protected static final String DB_NAME = "dataBD.db";
     private static final int DB_VERSION = 1;
+
+    private List<String> CreateTable = new ArrayList<>(Arrays.asList(
+            customer_dl.CREATE, custOrder_dl.CREATE,custSale_dl.CREATE,item_dl.CREATE
+            ,itemStg_dl.CREATE,itemUnit_dl.CREATE,unit_dl.CREATE));
+
 
 
     public DbHelper(Context context){
@@ -29,11 +43,12 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String sqlUser = "create table users(user_id text, user_name text, email text)";
-        db.execSQL(sqlUser);
+        /*String sqlUser = "create table users(user_id text, user_name text, email text)";*/
 
-        String initUser = "insert into users values('001','peter','peter@hotmail.com')";
-        db.execSQL(initUser);
+        for(int i=0;i< CreateTable.size();i++)
+            db.execSQL(CreateTable.get(i));
+
+
     }
 
     //升級資料庫(目前以拋棄現有資料庫重新建立為方法，較不佳)

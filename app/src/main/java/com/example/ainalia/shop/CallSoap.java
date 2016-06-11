@@ -1,5 +1,7 @@
 package com.example.ainalia.shop;
 
+import android.util.Log;
+
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
@@ -28,10 +30,11 @@ public class CallSoap {
     }
 
     //無輸入參數，下載。
-    public String CallHellow()
+    public String[] CallHellow()
     {
 
-        String Get_method="";
+        String[] Get_method ;
+
 
         try{
 
@@ -62,14 +65,31 @@ public class CallSoap {
 
             SoapObject result= (SoapObject)envelope.getResponse();
 
-            String results = result.toString();
+            int num = result.getPropertyCount()-1;   //去掉"anyType{}"
+            //int acount = result.getAttributeCount();
+
+            if(num >= 0)
+            {
+                Get_method = new String[num];
+
+                for(int i=0;i<Get_method.length;i++)
+                {
+                    Get_method[i]=result.getProperty(i).toString();
+                }
 
 
-            Get_method=results;
+            }else
+            {
+                Get_method = new String[1];
+                Get_method[0]="無資料！";
+
+            }
+
 
         }catch (Exception e){
 
-            Get_method=e.getMessage(); //將錯誤訊息傳回
+            Get_method = new String[1];
+            Get_method[0]=e.getMessage(); //將錯誤訊息傳回
 
         }
 
@@ -78,9 +98,9 @@ public class CallSoap {
     }
 
     //有輸入參數，下載。
-    public String getUnit(String s) {
+    public String[] getUnit(String s) {
 
-        String Get_method="";
+        String[] Get_method ;
 
         try{
 
@@ -108,19 +128,33 @@ public class CallSoap {
 
             androidHttpTransport.call(SOAP_ACTIONS_SEARCH, envelope);
 
-
-
             //get the response
+            SoapObject result= (SoapObject)envelope.bodyIn;
+            int num = result.getPropertyCount();
+            Log.v("NUMOK", Integer.toString(num));
+            if (num >= 0)
+            {
+                Get_method = new String[num];
 
-            SoapObject object = (SoapObject) envelope.bodyIn;
+                for(int i=0;i<Get_method.length;i++)
+                {
+                    Get_method[i]=result.getProperty(i).toString();
+                    Log.v("OK", Get_method[i]);
+                }
 
-            String results = object.getProperty(0).toString();
 
-            Get_method=results;
+            }else
+            {
+                Get_method = new String[1];
+                Get_method[0]="無資料！";
+
+            }
+
 
         }catch (Exception e){
 
-            Get_method=e.getMessage(); //將錯誤訊息傳回
+            Get_method = new String[1];
+            Get_method[0]=e.getMessage(); //將錯誤訊息傳回
 
         }
 

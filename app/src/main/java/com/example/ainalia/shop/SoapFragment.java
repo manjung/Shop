@@ -145,12 +145,14 @@ public class SoapFragment extends Fragment {
 
             if(MY_PROGRESSBAR_TAG.equals(intent.getAction()))
             {
-                Bundle bundle = intent.getExtras(); ;
+                Bundle bundle = intent.getExtras();
                 int time = bundle.getInt(PROGRESSPAR);
-                String outputdata = bundle.getString(TEXT_OUTPUT);
+                //String outputdata = bundle.getString(TEXT_OUTPUT);
+                String outputdata = Integer.toString(time)+"%";
                 setOutPutData(outputdata);
                 text.setText(receiver.getOutPutData());
                 progressBar.setProgress(time);
+
 
             }else if(MY_BROADCAST_TAG.equals(intent.getAction()))
             {

@@ -8,7 +8,7 @@ public class itemUnit_dl
 {
     private static final String TableName = "itemUnit_dl ";
 
-    public static final String CREATE = "CREATE TABLE " + TableName
+    public static final String CREATE = "CREATE TABLE IF NOT EXISTS " + TableName
             + " ( "
             + "Y05_UN   INTEGER  NOT NULL "                             //產品序號
             + " , "
@@ -19,5 +19,5 @@ public class itemUnit_dl
             + "SQTY       FLOAT "                                          //數量
             + " , "
             + "PRIMARY KEY ( Y05_UN , S17_UN , S17_UN1 ) "
-            + " ) ";
+            + " ); ";
 }
